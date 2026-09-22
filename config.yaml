@@ -1,0 +1,124 @@
+# PubMed search queries (using NCBI E-utilities syntax)
+queries:
+  amr:
+    label: "Antimicrobial Resistance"
+    query: >-
+      (antimicrobial resistance[MeSH] OR antimicrobial susceptibility testing[MeSH]
+      OR drug resistance, microbial[MeSH] OR beta-lactamases[MeSH]
+      OR minimum inhibitory concentration OR breakpoint OR EUCAST OR CLSI
+      OR "susceptibility testing")
+  metagenomics:
+    label: "Metagenomics"
+    query: >-
+      (metagenomics[MeSH] OR shotgun metagenomics OR resistome
+      OR metagenomic sequencing OR "antimicrobial resistance genes"
+      OR ARG OR metagenome-assembled genome)
+  longread:
+    label: "Long-Read Microbiology"
+    query: >-
+      (nanopore sequencing[MeSH] OR long-read sequencing OR PacBio
+      OR Oxford Nanopore OR MinION OR "complete genome" AND
+      (bacteria OR microbial))
+  tools:
+    label: "Bioinformatics Tools"
+    query: >-
+      (antimicrobial resistance AND (software OR pipeline OR tool OR database
+      OR web server OR bioinformatics) AND (genome OR sequence))
+
+# Preprint topic-matching patterns (regex, case-insensitive)
+# "tools" alone is not an anchor topic — a paper must match at least one other topic
+topic_patterns:
+  amr:
+    - "antimicrobial.resistan"
+    - "antibiotic.resistan"
+    - "susceptibility.test"
+    - "minimum inhibitory"
+    - "\\bMIC\\b"
+    - "breakpoint"
+    - "\\bEUCAST\\b"
+    - "\\bCLSI\\b"
+    - "beta.lactam"
+    - "carbapenem"
+    - "\\bMRSA\\b"
+    - "\\bESBL\\b"
+    - "\\bMDR\\b"
+    - "colistin"
+    - "vancomycin.resistan"
+  metagenomics:
+    - "metagenomic"
+    - "resistome"
+    - "shotgun.sequenc"
+    - "metagenome.assembled"
+    - "\\bMAG\\b"
+    - "antimicrobial.resistance.gene"
+    - "\\bARG\\b"
+  longread:
+    - "nanopore"
+    - "long.read"
+    - "\\bPacBio\\b"
+    - "\\bMinION\\b"
+    - "Oxford.Nanopore"
+    - "\\bONT\\b"
+    - "complete.genome"
+  tools:
+    - "pipeline"
+    - "\\btool\\b"
+    - "software"
+    - "web.server"
+    - "benchmark"
+    - "database"
+    - "bioinformatic"
+
+# Preprint server categories to search
+preprint_categories:
+  biorxiv:
+    - microbiology
+    - bioinformatics
+    - genomics
+  medrxiv:
+    - infectious_diseases
+
+# Tier-1 journal whitelist (ISO abbreviations, exact match)
+tier1_journals:
+  - "Clin Microbiol Infect"
+  - "J Antimicrob Chemother"
+  - "Antimicrob Agents Chemother"
+  - "J Clin Microbiol"
+  - "Lancet Infect Dis"
+  - "Clin Infect Dis"
+  - "Emerg Infect Dis"
+  - "mBio"
+  - "Nat Microbiol"
+  - "Microbiome"
+  - "ISME J"
+  - "Genome Biol"
+  - "Nucleic Acids Res"
+  - "Bioinformatics"
+  - "Nat Commun"
+  - "PLoS Pathog"
+  - "Front Microbiol"
+  - "mSystems"
+  - "mSphere"
+  - "Int J Antimicrob Agents"
+  - "Drug Resist Updat"
+  - "Eurosurveillance"
+  - "MMWR Morb Mortal Wkly Rep"
+  - "N Engl J Med"
+  - "Lancet"
+  - "BMJ"
+  - "JAMA"
+  - "Nature"
+  - "Science"
+  - "Genome Res"
+  - "Briefings Bioinform"
+  - "Nat Methods"
+  - "Nat Biotechnol"
+  - "Gigascience"
+  - "BMC Genomics"
+  - "BMC Microbiol"
+  - "Diagn Microbiol Infect Dis"
+  - "Eur J Clin Microbiol Infect Dis"
+  - "Infect Drug Resist"
+  - "Antibiotics (Basel)"
+  - "Microb Genom"
+  - "Microb Drug Resist"
